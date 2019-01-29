@@ -22,3 +22,4 @@ http://localhost:8001/api/v1/namespaces/kube-system/services/https:kubernetes-da
 
 ## TODO 
 * Describe what is being deployed in this directory
+* Move `terraform output *` commands to tf scripts as [local-exec provisioner](https://www.terraform.io/docs/provisioners/local-exec.html). This way `setup.sh` will solely be used to apply config maps to cluster and setup workstation connection to cluster, making the script idempotent. 
