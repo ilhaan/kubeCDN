@@ -5,9 +5,9 @@
 ```
 terraform apply -auto-approve 
 ```
-2. Run the `setup.sh` script to connect `kubectl` to the above deployed cluster: 
+2. Run the `setup.sh` script to connect `kubectl` to the above deployed cluster. Note that this script needs to be run as commands in the current shell, as opposed to running in a child process.
 ```
-./setup.sh 
+. ./setup.sh 
 ```
 3. Copy dashboard access code to clipboard: 
 ```
