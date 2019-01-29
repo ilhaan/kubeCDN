@@ -1,2 +1,2 @@
-# kubundance
+# kubundancy
 Multi-region Kubernetes deployment 
