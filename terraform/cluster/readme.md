@@ -19,3 +19,6 @@ kubectl proxy &
 ```
 5. Navigate to the following URL to view the dashboard: 
 http://localhost:8001/api/v1/namespaces/kube-system/services/https:kubernetes-dashboard:/proxy/ 
+
+## TODO 
+* Describe what is being deployed in this directory
