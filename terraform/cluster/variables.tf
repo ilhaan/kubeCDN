@@ -3,12 +3,12 @@
 #
 
 variable "region" {
-	description = "AWS region to launch servers" 
-  default = "us-west-2"
+  description = "AWS region to launch servers"
+  default     = "us-west-2"
 }
 
 variable "keypair_name" {
-	description = "The name of your pre-made key-pair in Amazon (e.g. david-IAM-keypair )"
+  description = "The name of your pre-made key-pair in Amazon (e.g. david-IAM-keypair )"
 }
 
 variable "cluster-name" {
