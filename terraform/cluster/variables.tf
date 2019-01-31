@@ -4,7 +4,6 @@
 
 variable "region" {
   description = "AWS region to launch servers"
-  default     = "us-west-2"
 }
 
 variable "keypair_name" {
