@@ -2,7 +2,7 @@
 # This data source is included for ease of sample architecture deployment
 # and can be swapped out as necessary.
 provider "aws" {
-  region     = "${var.region}"
+  region = "${var.region}"
 }
 
 data "aws_availability_zones" "available" {}
@@ -125,8 +125,8 @@ resource "aws_security_group_rule" "demo-cluster-ingress-workstation-https" {
 # ===================== EKS Master Cluster ====================================
 
 resource "aws_eks_cluster" "demo" {
-  name            = "${var.cluster-name}"
-  role_arn        = "${aws_iam_role.demo-cluster.arn}"
+  name     = "${var.cluster-name}"
+  role_arn = "${aws_iam_role.demo-cluster.arn}"
 
   vpc_config {
     security_group_ids = ["${aws_security_group.demo-cluster.id}"]
@@ -138,8 +138,6 @@ resource "aws_eks_cluster" "demo" {
     "aws_iam_role_policy_attachment.demo-cluster-AmazonEKSServicePolicy",
   ]
 }
-
-
 
 # =============== Worker Node IAM Role and Instance Profile ===================
 
