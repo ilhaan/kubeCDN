@@ -12,7 +12,7 @@ resource "aws_vpc" "demo" {
 
   tags = "${
     map(
-     "Name", "terraform-eks-demo-node",
+     "Name", "kubundancy-vpc-${var.region}",
      "kubernetes.io/cluster/${var.cluster-name}", "shared",
     )
   }"
@@ -37,7 +37,7 @@ resource "aws_internet_gateway" "demo" {
   vpc_id = "${aws_vpc.demo.id}"
 
   tags {
-    Name = "terraform-eks-demo"
+    Name = "kubundancy-ig-${var.region}"
   }
 }
 
@@ -60,7 +60,7 @@ resource "aws_route_table_association" "demo" {
 # ============================ IAM Roles & Policies ===========================
 
 resource "aws_iam_role" "demo-cluster" {
-  name = "terraform-eks-demo-cluster"
+  name = "kubundancy-${var.region}-cluster"
 
   assume_role_policy = <<POLICY
 {
@@ -91,7 +91,7 @@ resource "aws_iam_role_policy_attachment" "demo-cluster-AmazonEKSServicePolicy" 
 # ===================== EKS Master Cluster Security Group =====================
 
 resource "aws_security_group" "demo-cluster" {
-  name        = "terraform-eks-demo-cluster"
+  name        = "kubundancy-sg-nodes-${var.region}"
   description = "Cluster communication with worker nodes"
   vpc_id      = "${aws_vpc.demo.id}"
 
@@ -103,7 +103,7 @@ resource "aws_security_group" "demo-cluster" {
   }
 
   tags {
-    Name = "terraform-eks-demo"
+    Name = "kubundancy-sg-nodes-${var.region}"
   }
 }
 
@@ -142,7 +142,7 @@ resource "aws_eks_cluster" "demo" {
 # =============== Worker Node IAM Role and Instance Profile ===================
 
 resource "aws_iam_role" "demo-node" {
-  name = "terraform-eks-demo-node"
+  name = "kubundancy-${var.region}-node"
 
   assume_role_policy = <<POLICY
 {
@@ -176,14 +176,14 @@ resource "aws_iam_role_policy_attachment" "demo-node-AmazonEC2ContainerRegistryR
 }
 
 resource "aws_iam_instance_profile" "demo-node" {
-  name = "terraform-eks-demo"
+  name = "kubundancy-${var.region}"
   role = "${aws_iam_role.demo-node.name}"
 }
 
 # ==================== Worker Node Security Group ============================
 
 resource "aws_security_group" "demo-node" {
-  name        = "terraform-eks-demo-node"
+  name        = "kubundancy-demo-node-${var.region}"
   description = "Security group for all nodes in the cluster"
   vpc_id      = "${aws_vpc.demo.id}"
 
@@ -196,7 +196,7 @@ resource "aws_security_group" "demo-node" {
 
   tags = "${
     map(
-     "Name", "terraform-eks-demo-node",
+     "Name", "kubundancy-demo-node-${var.region}",
      "kubernetes.io/cluster/${var.cluster-name}", "owned",
     )
   }"
@@ -270,7 +270,7 @@ resource "aws_launch_configuration" "demo" {
   iam_instance_profile        = "${aws_iam_instance_profile.demo-node.name}"
   image_id                    = "${data.aws_ami.eks-worker.id}"
   instance_type               = "m4.large"
-  name_prefix                 = "terraform-eks-demo"
+  name_prefix                 = "kubundancy-demo-node-${var.region}"
   security_groups             = ["${aws_security_group.demo-node.id}"]
   user_data_base64            = "${base64encode(local.demo-node-userdata)}"
 
@@ -286,7 +286,7 @@ resource "aws_autoscaling_group" "demo" {
   launch_configuration = "${aws_launch_configuration.demo.id}"
   max_size             = 2
   min_size             = 1
-  name                 = "terraform-eks-demo"
+  name                 = "kubundancy-${var.region}"
   vpc_zone_identifier  = ["${aws_subnet.demo.*.id}"]
 
   tag {

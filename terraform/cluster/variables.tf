@@ -11,6 +11,6 @@ variable "keypair_name" {
 }
 
 variable "cluster-name" {
-  default = "ilhaan-terraform-eks-demo"
+  default = "kubundancy"
   type    = "string"
 }
