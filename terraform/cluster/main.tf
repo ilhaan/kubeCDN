@@ -13,7 +13,7 @@ resource "aws_vpc" "demo" {
   tags = "${
     map(
      "Name", "kubundancy-vpc-${var.region}",
-     "kubernetes.io/cluster/${var.cluster-name}", "shared",
+     "kubernetes.io/cluster/${lookup(var.cluster-name, var.region)}", "shared",
     )
   }"
 }
@@ -28,7 +28,7 @@ resource "aws_subnet" "demo" {
   tags = "${
     map(
      "Name", "terraform-eks-demo-node",
-     "kubernetes.io/cluster/${var.cluster-name}", "shared",
+     "kubernetes.io/cluster/${lookup(var.cluster-name, var.region)}", "shared",
     )
   }"
 }
@@ -125,7 +125,7 @@ resource "aws_security_group_rule" "demo-cluster-ingress-workstation-https" {
 # ===================== EKS Master Cluster ====================================
 
 resource "aws_eks_cluster" "demo" {
-  name     = "${var.cluster-name}"
+  name     = "${lookup(var.cluster-name, var.region)}"
   role_arn = "${aws_iam_role.demo-cluster.arn}"
 
   vpc_config {
@@ -197,7 +197,7 @@ resource "aws_security_group" "demo-node" {
   tags = "${
     map(
      "Name", "kubundancy-demo-node-${var.region}",
-     "kubernetes.io/cluster/${var.cluster-name}", "owned",
+     "kubernetes.io/cluster/${lookup(var.cluster-name, var.region)}", "owned",
     )
   }"
 }
@@ -261,7 +261,7 @@ locals {
   demo-node-userdata = <<USERDATA
 #!/bin/bash
 set -o xtrace
-/etc/eks/bootstrap.sh --apiserver-endpoint '${aws_eks_cluster.demo.endpoint}' --b64-cluster-ca '${aws_eks_cluster.demo.certificate_authority.0.data}' '${var.cluster-name}'
+/etc/eks/bootstrap.sh --apiserver-endpoint '${aws_eks_cluster.demo.endpoint}' --b64-cluster-ca '${aws_eks_cluster.demo.certificate_authority.0.data}' '${lookup(var.cluster-name, var.region)}'
 USERDATA
 }
 
@@ -296,7 +296,7 @@ resource "aws_autoscaling_group" "demo" {
   }
 
   tag {
-    key                 = "kubernetes.io/cluster/${var.cluster-name}"
+    key                 = "kubernetes.io/cluster/${lookup(var.cluster-name, var.region)}"
     value               = "owned"
     propagate_at_launch = true
   }

@@ -7,6 +7,10 @@ variable "region" {
 }
 
 variable "cluster-name" {
-  default = "kubundancy"
-  type    = "string"
+  type = "map"
+
+  default = {
+    "us-east-1" = "kubundancy-east"
+    "us-west-2" = "kubundancy-west"
+  }
 }

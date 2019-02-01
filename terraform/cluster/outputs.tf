@@ -25,7 +25,7 @@ users:
       args:
         - "token"
         - "-i"
-        - "${var.cluster-name}"
+        - "${lookup(var.cluster-name, var.region)}"
 KUBECONFIG
 
   config-map-aws-auth = <<CONFIGMAPAWSAUTH
