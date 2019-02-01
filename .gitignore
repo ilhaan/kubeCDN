@@ -27,5 +27,5 @@ override.tf.json
 # !example_override.tf
 
 # Config files 
-*.kubeconfig
-*.config-map-aws-auth.yaml
+*kubeconfig
+*config-map-aws-auth.yaml
