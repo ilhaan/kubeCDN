@@ -1,18 +1,20 @@
-#!/usr/bin/env bash 
+#!/usr/bin/env bash
 
-set -e 
+set -e
 
-# Generate kubeconfig file 
-terraform output kubeconfig > kubeconfig 
+# East Setup
+terraform output -module=east-pipeline kubeconfig > east-kubeconfig
+export KUBECONFIG=$(PWD)/east-kubeconfig
+echo $KUBECONFIG
+terraform output -module=east-pipeline config-map-aws-auth > east-config-map-aws-auth.yaml
+kubectl apply -f east-config-map-aws-auth.yaml
+kubectl apply -f https://raw.githubusercontent.com/kubernetes/dashboard/v1.10.1/src/deploy/recommended/kubernetes-dashboard.yaml
 
-# Set env variable for kubectl access 
-export KUBECONFIG=$(PWD)/kubeconfig 
 
-# Generate aws auth config map 
-terraform output config-map-aws-auth > config-map-aws-auth.yaml
-
-# Apply aws auth config map 
-kubectl apply -f config-map-aws-auth.yaml
-
-# Deploy Kubernetes dashboard 
+# West Setup
+terraform output -module=west-pipeline kubeconfig > west-kubeconfig
+export KUBECONFIG=$(PWD)/west-kubeconfig
+echo $KUBECONFIG
+terraform output -module=west-pipeline config-map-aws-auth > west-config-map-aws-auth.yaml
+kubectl apply -f west-config-map-aws-auth.yaml
 kubectl apply -f https://raw.githubusercontent.com/kubernetes/dashboard/v1.10.1/src/deploy/recommended/kubernetes-dashboard.yaml
