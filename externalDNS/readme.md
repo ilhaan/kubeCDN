@@ -1,6 +1,6 @@
 # ExternalDNS Setup 
 
-Follow instructions below to setup and test ExternalDNS: 
+Follow instructions below to setup and test ExternalDNS. Make sure to add IAM role as described in references section before following steps below.  
 
 1. Update `--domain-filter` argument in `externaldns,yaml` and then run: 
 ```kubectl apply -f externaldns.yaml```
