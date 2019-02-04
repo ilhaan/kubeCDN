@@ -175,6 +175,12 @@ resource "aws_iam_role_policy_attachment" "demo-node-AmazonEC2ContainerRegistryR
   role       = "${aws_iam_role.demo-node.name}"
 }
 
+resource "aws_iam_role_policy_attachment" "demo-node-ExternalDNSRoute53" {
+  # policy_arn = "${aws_iam_policy.external-dns-policy.arn}"
+  policy_arn = "${var.externaldnspolicyarn}"
+  role       = "${aws_iam_role.demo-node.name}"
+}
+
 resource "aws_iam_instance_profile" "demo-node" {
   name = "kubundancy-${var.region}"
   role = "${aws_iam_role.demo-node.name}"

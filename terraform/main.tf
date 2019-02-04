@@ -1,11 +1,13 @@
 module "west-pipeline" {
-  source = "cluster"
-  region = "us-west-2"
+  source               = "cluster"
+  region               = "us-west-2"
+  externaldnspolicyarn = "${aws_iam_policy.external-dns-policy.arn}"
 }
 
 module "east-pipeline" {
-  source = "cluster"
-  region = "us-east-1"
+  source               = "cluster"
+  region               = "us-east-1"
+  externaldnspolicyarn = "${aws_iam_policy.external-dns-policy.arn}"
 }
 
 # Add policy for ExternalDNS
@@ -18,7 +20,7 @@ module "east-pipeline" {
 /* Specify AWS region for policy creation to prevent user prompt after apply.
    Without this, user is prompted to enter region despite policies being
    listed under "Global". This behavior was observed in Terraform v0.11.11
-   and provider.aws v1.57.0. 
+   and provider.aws v1.57.0.
 */
 provider "aws" {
   region = "us-east-1"

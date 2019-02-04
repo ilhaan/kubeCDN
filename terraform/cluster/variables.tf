@@ -14,3 +14,7 @@ variable "cluster-name" {
     "us-west-2" = "kubundancy-west"
   }
 }
+
+variable "externaldnspolicyarn" {
+  description = "ExternalDNS Policy"
+}
