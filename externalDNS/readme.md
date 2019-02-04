@@ -3,10 +3,11 @@
 Follow instructions below to setup and test ExternalDNS. Make sure to add IAM role as described in references section before following steps below.  
 
 1. Update `--domain-filter` argument in `externaldns.yaml` and then run:
-```kubectl apply -f externaldns.yaml```
+```./install-externaldns.sh```
 2. Similarly, update `annotations` in `testservice.yaml` and run: 
 ```kubectl apply -f testservice.yaml```
-3. Route 53 should have an updated DNS record for the service deployed above.
+```./test-deploy.sh```
+3. Route 53 should have an updated DNS record for the service deployed above. However, **note* that only one of the regions will have an A record set on Route 53. It seems that ExternalDNS cannot set multiple records of the same type (multiple A records with different aliases).
 
 
 ## Notes:
