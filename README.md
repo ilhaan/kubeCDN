@@ -1,6 +1,8 @@
 # kubundancy
 Multi-region Kubernetes deployment
 
+Alternative name: **kubeCDN**
+
 ## Instructions
 *(rough draft of instructions)
 
