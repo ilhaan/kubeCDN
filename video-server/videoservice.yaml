@@ -1,0 +1,33 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: videoserver
+  annotations:
+    external-dns.alpha.kubernetes.io/hostname: video.test.ilhaan.com.
+spec:
+  type: LoadBalancer
+  ports:
+  - port: 1935
+    name: rtmp
+    targetPort: 1935
+  selector:
+    app: videoserver
+
+---
+
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: videoserver
+spec:
+  template:
+    metadata:
+      labels:
+        app: videoserver
+    spec:
+      containers:
+      - image: ilhaan/nginx-rtmp-sample
+        name: nginx-rtmp-sample
+        ports:
+        - containerPort: 1935
+          name: rtmp
