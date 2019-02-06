@@ -1,11 +1,5 @@
-# Prometheus Setup 
+# Monitoring Setup
 
-Run the following for each cluster: 
-
-```
-k create -f prometheus-storageclass.yaml 
-```
-
-```
-helm install -f prometheus-values.yaml stable/prometheus --name prometheus --namespace prometheus
-```
+## Instructions
+1. Update the value of `adminPassword` in the file `grafana-values.yaml`
+1. Run: `./setup_monitoring.sh`
