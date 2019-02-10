@@ -1,3 +1,5 @@
+![kubeCDN](images/kubeCDN_logo.png)
+
 # kubeCDN
 Multi-region Kubernetes deployment
 
