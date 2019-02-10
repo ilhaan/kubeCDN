@@ -1,4 +1,5 @@
-![kubeCDN](images/kubeCDN_logo.png)
+<img src="images/kubeCDN_logo.png" width="100">
+
 
 # kubeCDN
 Multi-region Kubernetes deployment
