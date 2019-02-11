@@ -3,7 +3,7 @@
 # kubeCDN
 A self-hosted content delivery network based on Kubernetes. Easily setup Kubernetes clusters in multiple AWS regions and deploy resilient and reliable services to a global user base within minutes.
 
-This project was developed by [Ilhaan Rasheed](https://www.ilhaan.com) during his tenure as a DevOps Engineering Fellow at [Insight](https://www.insightdevops.com/). The capbilities of this project have been demonstrated using video streaming as an example. Ilhaan's presentation slides with a short demo is available [here](https://www.ilhaan.com/slides).
+This project was developed by [Ilhaan Rasheed](https://www.ilhaan.com) during his tenure as a DevOps Engineering Fellow at [Insight](https://www.insightdevops.com/). The capabilities of this project have been demonstrated using video streaming as an example. Ilhaan's presentation slides with a short demo is available [here](https://www.ilhaan.com/slides).
 
 ----
 
@@ -20,4 +20,4 @@ Before deploying your self-hosted CDN using kubeCDN, you will need the following
 After the components above have been installed, clone this repo and proceed to the next section.
 
 ## Deploy Clusters
-To deploy EKS clusters in multiple regions, follow instructions from [here](./terraform/readme.md). 
+To deploy EKS clusters in multiple regions, follow instructions from [here](./terraform/readme.md).
