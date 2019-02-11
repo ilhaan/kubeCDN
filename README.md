@@ -22,3 +22,15 @@ After the components above have been installed, clone this repo and proceed to t
 
 ## Deploy Clusters
 To deploy EKS clusters in multiple regions, follow instructions from [here](./terraform/readme.md).
+
+## Setup Route53
+**(instructions coming soon)**
+
+## Install ExternalDNS
+Follow instructions [here](./externalDNS/readme.md).
+
+## Install Monitoring tools
+Install Prometheus and Grafana by following instructions [here](./monitoring/readme.md).
+
+## Deploy Demo Video Server
+To demonstrate kubeCDN, a simple Nginx based RTMP streaming server was crated. Follow instructions [here](./video-server/readme.md) for more information on this server and for deploy instructions. 
