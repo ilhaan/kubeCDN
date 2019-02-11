@@ -16,6 +16,7 @@ Before deploying your self-hosted CDN using kubeCDN, you will need the following
 * Install Terraform. This project was developed using Terraform v0.11.11.
 * Install `kubectl` v1.13.2 or higher.
 * Install `helm` v2.12.3 or higher. On macOS, you can install helm using `brew install kubernetes-helm`.
+* Install `aws-iam-authenticator`
 
 After the components above have been installed, clone this repo and proceed to the next section.
 
