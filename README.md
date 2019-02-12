@@ -20,17 +20,14 @@ Before deploying your self-hosted CDN using kubeCDN, you will need the following
 
 After the components above have been installed, clone this repo and proceed to the next section.
 
-## Deploy Clusters
-To deploy EKS clusters in multiple regions, follow instructions from [here](./terraform/readme.md).
-
-## Setup Route53
-**(instructions coming soon)**
-
-## Install ExternalDNS
-Follow instructions [here](./externalDNS/readme.md).
-
-## Install Monitoring tools
-Install Prometheus and Grafana by following instructions [here](./monitoring/readme.md).
-
-## Deploy Demo Video Server
-To demonstrate kubeCDN, a simple Nginx based RTMP streaming server was crated. Follow instructions [here](./video-server/readme.md) for more information on this server and for deploy instructions. 
+## Deploy Clusters & Service
+1. Deploy Clusters
+  * To deploy EKS clusters in multiple regions, follow instructions from [here](./terraform/readme.md).
+2. Setup Route53
+  * **(instructions coming soon)**
+3. Install ExternalDNS
+  * Follow instructions [here](./externalDNS/readme.md).
+4. Install Monitoring tools
+  * Install Prometheus and Grafana by following instructions [here](./monitoring/readme.md).
+5. Deploy Demo Video Server
+  * To demonstrate kubeCDN, a simple Nginx based RTMP streaming server was crated. Follow instructions [here](./video-server/readme.md) for more information on this server and for deploy instructions.
