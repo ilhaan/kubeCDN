@@ -30,4 +30,4 @@ After the components above have been installed, clone this repo and proceed to t
 4. Install Monitoring tools
   * Install Prometheus and Grafana by following instructions [here](./monitoring/readme.md).
 5. Deploy Demo Video Server
-  * To demonstrate kubeCDN, a simple Nginx based RTMP streaming server was crated. Follow instructions [here](./video-server/readme.md) for more information on this server and for deploy instructions.
+  * To demonstrate kubeCDN, a simple Nginx based RTMP streaming server was created. Follow instructions [here](./video-server/readme.md) for more information on this server and for deploy instructions.
