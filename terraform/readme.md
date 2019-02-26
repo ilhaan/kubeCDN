@@ -6,13 +6,13 @@ Please note that by default this repo sets up clustesr in the `us-west-2` and `u
 
 ## Instructions
 1. Make sure you are in the `terraform` repo
-1. Run: `terraform init`
-1. Create a file named `terraform.tfvars` and insert the following. Read more about AWS Keypairs [here](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-key-pairs.html)
+2. Run: `terraform init`
+3. Create a file named `terraform.tfvars` and insert the following. Read more about AWS Keypairs [here](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-key-pairs.html)
 ```
 keypair_name="<enter-your-aws-keypair-name-here-without-extensions>"
 ```
-1. Run: `terraform apply -auto-approve`. This process takes about 15 minutes to setup two regions.
-1. After the terraform process above has completed, run `./setup.sh `. This script performs the following tasks:
+4. Run: `terraform apply -auto-approve`. This process takes about 15 minutes to setup two regions.
+5. After the terraform process above has completed, run `./setup.sh `. This script performs the following tasks:
   * Generates `kubedconfig` files for each deployment region. `kubeconfig` files are used to connect to different clusters for service deployments and other tasks.
   * Generates and applies config map to each cluster.
   * Install Kubernetes dashboard.
