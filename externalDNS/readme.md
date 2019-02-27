@@ -1,6 +1,6 @@
 # kubeCDN: ExternalDNS Setup
 
-Follow instructions below to setup and test ExternalDNS. Make sure to add IAM role as described in references section before following steps below.  
+Follow instructions below to setup and test ExternalDNS. Make sure to add IAM role as described in the [References](#references) section before following steps below.
 
 1. Update `--domain-filter` argument in `externaldns.yaml` and then run:
 ```./install-externaldns.sh```
