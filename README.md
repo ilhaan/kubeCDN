@@ -39,9 +39,11 @@ Follow these instructions to teardown all deployed services and infrastructure.
 ```
 ./services_teardown.sh
 ```
+
 2. The second teardown step is to remove all infrastructure that was setup in step 1 of the section above. This can be done by navigating to the `terrform` directory and running the following: 
 ```
 terraform destroy -auto-approve 
 ```
 This process takes about 10 minutes to complete with two regions. 
+
 3. After successful run of the previous step, all infrastructure associated with kubeCDN should have been torn down. Verify this on AWS Console in order to avoid accidental charges on your account. 
