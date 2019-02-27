@@ -27,6 +27,6 @@ Deploy this to all k8s clusters using:
 This will deploy the video server to all regions that were setup in earlier steps of the instructions shown [here](https://github.com/ilhaan/kubeCDN#deploy-clusters--service). Access video streams using the URL that EKS exposes for the service based on the instructions in the [section above](#docker-image). 
 
 ## References: 
-* Image - https://hub.docker.com/r/tiangolo/nginx-rtmp/
-* RTMP documentation - https://github.com/arut/nginx-rtmp-module/wiki/Directives
-* Sample video source: https://github.com/mediaelement/mediaelement-files
+* [Source Image](https://hub.docker.com/r/tiangolo/nginx-rtmp/)
+* [RTMP Documentation](https://github.com/arut/nginx-rtmp-module/wiki/Directives)
+* [Sample Video Source](https://github.com/mediaelement/mediaelement-files)
