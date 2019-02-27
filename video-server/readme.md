@@ -19,12 +19,12 @@ rtmp://localhost/vod/video.mp4
 ---------
 
 ## kubeCDN Demo Installation 
-Deploy this to k8s cluster using: 
+Deploy this to all k8s clusters using: 
 ```
-kubectl apply -f videoservice.yaml
+./cluster_deploy.sh
 ```
 
-Make sure to specify cluster config file using `--kubeconfig` above. 
+This will deploy the video server to all regions that were setup in earlier steps of the instructions shown [here](https://github.com/ilhaan/kubeCDN#deploy-clusters--service). Access video streams using the URL that EKS exposes for the service based on the instructions in the [section above](#docker-image). 
 
 ## References: 
 * Image - https://hub.docker.com/r/tiangolo/nginx-rtmp/
