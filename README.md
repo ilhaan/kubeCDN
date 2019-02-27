@@ -31,3 +31,17 @@ After the components above have been installed, clone this repo and proceed to t
   	* Install Prometheus and Grafana by following instructions [here](./monitoring/readme.md).
 5. Deploy Demo Video Server
   	* To demonstrate kubeCDN, a simple Nginx based RTMP streaming server was created. Follow instructions [here](./video-server/readme.md) for more information on this server and for deploy instructions.
+
+## Teardown 
+Follow these instructions to teardown all deployed services and infrastructure. 
+
+1. First, all services that have been deployed need to be removed. There is a script in the root directory of this repo that performs this task. Run it using: 
+```
+./services_teardown.sh
+```
+2. The second teardown step is to remove all infrastructure that was setup in step 1 of the section above. This can be done by navigating to the `terrform` directory and running the following: 
+```
+terraform destroy -auto-approve 
+```
+This process takes about 15 minutes to complete with two regions. 
+3. After successful run of the previous step, all infrastructure associated with kubeCDN should have been torn down. Verify this on AWS Console in order to avoid accidental charges on your account. 
