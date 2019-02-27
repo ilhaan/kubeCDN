@@ -16,7 +16,7 @@ keypair_name="<enter-your-aws-keypair-name-here-without-extensions>"
   * Generates `kubedconfig` files for each deployment region. `kubeconfig` files are used to connect to different clusters for service deployments and other tasks.
   * Generates and applies config map to each cluster.
   * Install Kubernetes dashboard.
-  * **Install `helm`**
+  * Install `helm`
   * Install heapster using `helm` to enable graphs in Kubernetes Dashboard
 
 After running the steps above, your current directory should contain `*-kubeconfig` files for each region. These files will be used by other scrips and components of the kubeCDN project for various setup and deployment procedures. Do not delete these files or move them to a different location. Doing so will prevent you from running subsequent instructions successfully.
