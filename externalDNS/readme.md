@@ -13,5 +13,5 @@ Follow instructions below to setup and test ExternalDNS. Make sure to add IAM ro
 * ExternalDNS is not currently capable of setting routing policies as per [this](https://github.com/kubernetes-incubator/external-dns/issues/571). Due to this, latency based routing will have to be manually set on AWS Console.
 
 ## References:
-* https://github.com/kubernetes-incubator/external-dns/blob/master/docs/tutorials/aws.md
-* https://www.phillipsj.net/posts/aws-eks-and-kubernetes-external-dns
+* [Here](https://github.com/kubernetes-incubator/external-dns/blob/master/docs/tutorials/aws.md) is a guide that walks through how to setup ExternalDNS with AWS. Specifically, use this guide to setup the correct IAM permissions on your account. 
+* [Another](https://www.phillipsj.net/posts/aws-eks-and-kubernetes-external-dns) helpful guide to setup ExternalDNS with AWS EKS. 
