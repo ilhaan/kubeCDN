@@ -43,5 +43,5 @@ Follow these instructions to teardown all deployed services and infrastructure.
 ```
 terraform destroy -auto-approve 
 ```
-This process takes about 15 minutes to complete with two regions. 
+This process takes about 10 minutes to complete with two regions. 
 3. After successful run of the previous step, all infrastructure associated with kubeCDN should have been torn down. Verify this on AWS Console in order to avoid accidental charges on your account. 
