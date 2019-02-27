@@ -3,7 +3,7 @@ kind: Service
 metadata:
   name: nginx
   annotations:
-    external-dns.alpha.kubernetes.io/hostname: nginx.test.ilhaan.com.
+    external-dns.alpha.kubernetes.io/hostname: nginx.<your-domain-here>
 spec:
   type: LoadBalancer
   ports:
