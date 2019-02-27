@@ -3,9 +3,13 @@
 Follow instructions below to setup and test ExternalDNS. Make sure to add IAM role as described in the [References](#references) section before following steps below. Also, read the limitations of ExternalDNS [here](#limitations).
 
 1. Update `--domain-filter` argument in `externaldns.yaml` and then run:
-```./install-externaldns.sh```
+```
+./install-externaldns.sh
+```
 2. If you would like to deploy an Nginx webserver as a test service, update `annotations` in `testservice.yaml` and run: 
-```./test-deploy.sh```
+```
+./test-deploy.sh
+```
 3. Route 53 should have an updated DNS record for the service deployed above.
 
 ## Limitations:
