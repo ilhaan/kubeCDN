@@ -40,7 +40,7 @@ Follow these instructions to teardown all deployed services and infrastructure.
 ./services_teardown.sh
 ```
 
-2. The second teardown step is to remove all infrastructure that was setup in step 1 of the section above. This can be done by navigating to the `terrform` directory and running the following: 
+2. The second teardown step is to remove all infrastructure that was setup in step 1 of the section above. This can be done by navigating to the `terraform` directory and running the following: 
 ```
 terraform destroy -auto-approve 
 ```
