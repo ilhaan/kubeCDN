@@ -24,7 +24,7 @@ After the components above have been installed, clone this repo and proceed to t
 1. Deploy Clusters
   * To deploy EKS clusters in multiple regions, follow instructions from [here](./terraform/readme.md).
 2. Setup Route53
-  * **(instructions coming soon)**
+  * Instructions to setup Route53 can be found [here](./route53/readme.md). 
 3. Install ExternalDNS
   * Follow instructions [here](./externalDNS/readme.md).
 4. Install Monitoring tools
