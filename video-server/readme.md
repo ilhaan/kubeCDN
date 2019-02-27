@@ -10,6 +10,12 @@ docker pull ilhaan/nginx-rtmp-sample
 
 If you would like to build and run this locally using the [Dockerfile](./Dockerfile) in this directory, you can use `./start-container.sh`. 
 
+
+After running this docker image, open a video player capable of RTMP streams ([VLC](https://www.videolan.org/vlc/index.html) is a good choice) and open a network stream using the following: 
+```
+rtmp://localhost/vod/video.mp4
+```
+
 ---------
 
 ## kubeCDN Demo Installation 
