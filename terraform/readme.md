@@ -21,6 +21,23 @@ keypair_name="<enter-your-aws-keypair-name-here-without-extensions>"
 
 After running the steps above, your current directory should contain `*-kubeconfig` files for each region. These files will be used by other scrips and components of the kubeCDN project for various setup and deployment procedures. Do not delete these files or move them to a different location. Doing so will prevent you from running subsequent instructions successfully.
 
+## Connect to Kubernetes Dashboard
+Following are instructions to connect to the [Kubernetes Dashboard](https://github.com/kubernetes/dashboard) (installed in steps shown above):
+
+1. Set your `KUBECONFIG` environment variable to point to the `kubeconfig` file of the cluster you would like to connect to (`kubeconfig` files are generated in step 5 of the instructions section). For example, if you are in the `terraform/` directory and you would like to connect to the cluster deployed to the west coast:
+```
+export KUBECONFIG=$(PWD)/west-kubeconfig
+```
+2. Generate and copy dashboard access code to your clipboard (example below is specific to macOS, Linux systems should use `xclip` instead of `pbcopy`):
+```
+aws-iam-authenticator token -i <ENTER-YOUR-CLUSTER-NAME> --token-only | pbcopy
+```
+3. Set up proxy connection to cluster:
+```
+kubectl proxy &
+```
+4. Navigate to the following URL to view dashboard:
+http://localhost:8001/api/v1/namespaces/kube-system/services/https:kubernetes-dashboard:/proxy/
 
 ## References
 * https://github.com/ilhaan/terraform-test
