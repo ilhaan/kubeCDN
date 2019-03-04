@@ -32,9 +32,9 @@ export KUBECONFIG=$(PWD)/west-kubeconfig
 ```
 aws-iam-authenticator token -i <ENTER-YOUR-CLUSTER-NAME> --token-only | pbcopy
 ```
-3. Set up proxy connection to cluster:
+3. Set up proxy connection to cluster. Note that this command will run in the foreground.
 ```
-kubectl proxy &
+kubectl proxy
 ```
 4. Navigate to the following URL to view dashboard:
 http://localhost:8001/api/v1/namespaces/kube-system/services/https:kubernetes-dashboard:/proxy/
