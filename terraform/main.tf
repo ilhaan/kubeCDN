@@ -1,3 +1,16 @@
+# Define all kubeCDN regions 
+/* Regions can be defined using the following: 
+
+module "<insert-chosen-name-for-region-deployment>" {
+	source = "cluster"
+	region = "<insert-AWS-region-here>"
+  externaldnspolicyarn = "${aws_iam_policy.external-dns-policy.arn}"
+}
+
+The above snippet needs to be defined for each region that is to be 
+deployed with kubeCDN.
+*/
+
 module "west-pipeline" {
   source               = "cluster"
   region               = "us-west-2"
