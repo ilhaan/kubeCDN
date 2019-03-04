@@ -19,7 +19,7 @@ keypair_name="<enter-your-aws-keypair-name-here-without-extensions>"
   * Install `helm`
   * Install heapster using `helm` to enable graphs in Kubernetes Dashboard
 
-After running the steps above, your current directory should contain `*-kubeconfig` files for each region. These files will be used by other scrips and components of the kubeCDN project for various setup and deployment procedures. Do not delete these files or move them to a different location. Doing so will prevent you from running subsequent instructions successfully.
+After running the steps above, your current directory should contain `*-kubeconfig` files for each region. These files will be used by other scripts and components of the kubeCDN project for various setup and deployment procedures. Do not delete these files or move them to a different location. Doing so will prevent you from running subsequent instructions successfully.
 
 ## Connect to Kubernetes Dashboard
 Following are instructions to connect to the [Kubernetes Dashboard](https://github.com/kubernetes/dashboard) (installed in steps shown above):
