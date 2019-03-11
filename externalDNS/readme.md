@@ -14,7 +14,7 @@ Follow instructions below to setup and test ExternalDNS. Make sure to add IAM ro
 
 ## Limitations:
 Following are some limitations with ExternalDNS at the time of writing: 
-* ExternalDNS is not currently capable of setting routing policies as per [this](https://github.com/kubernetes-incubator/external-dns/issues/571). Due to this, latency based routing will have to be manually set on AWS Console.
+* ExternalDNS is not currently incapable of setting routing policies as per [this](https://github.com/kubernetes-incubator/external-dns/issues/571). Due to this, latency based routing will have to be manually set on AWS Console.
 * When deploying to multiple regions, note that only one region will have an A record set on Route53. It seems that ExternalDNS cannot set multiple records of the same type (multiple A records with different aliases). This limitation was overcome by manually setting A records using AWS console. This issue will need to be revisited in the future. Refer to [this](https://github.com/kubernetes-incubator/external-dns/issues/270) for more info. 
 
 ## References:
