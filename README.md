@@ -5,6 +5,8 @@ A self-hosted content delivery network based on Kubernetes. Easily setup Kuberne
 
 This project was developed by [Ilhaan Rasheed](https://www.ilhaan.com) during his tenure as a DevOps Engineering Fellow at [Insight](https://www.insightdevops.com/). The capabilities of this project have been demonstrated using video streaming as an example. Ilhaan's presentation slides with a short demo is available [here](https://www.ilhaan.com/slides).
 
+[Here](https://blog.insightdatascience.com/how-to-build-your-own-cdn-with-kubernetes-5cab00d5c258) is a detailed blog post about kubeCDN. 
+
 ----
 
 # Instructions
